@@ -1,0 +1,6 @@
+<!--pages/home/index.wxml-->
+<text bindtap='bindInvoice'>开发票</text>
+<web-view src="https://wx116s.phtonspark.com/ouyangtest.html"></web-view>
+
+
+<!-- <web-view src="https://mp.weixin.qq.com/"></web-view> -->

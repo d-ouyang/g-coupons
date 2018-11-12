@@ -1,0 +1,9 @@
+<view class='container'>
+  <text>登录</text>
+  <form bindsubmit='onLogin'>
+    <input type="text" name='userName' placeholder="商户账户名" />
+    <input type="number" name='passWord' password placeholder="密码" />
+    <button formType="submit">Submit</button>
+  </form>
+  <text>忘记密码?</text>
+</view>
