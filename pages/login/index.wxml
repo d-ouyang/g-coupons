@@ -1,9 +1,23 @@
 <view class='container'>
-  <text>登录</text>
-  <form bindsubmit='onLogin'>
-    <input type="text" name='userName' placeholder="商户账户名" />
-    <input type="number" name='passWord' password placeholder="密码" />
-    <button formType="submit">Submit</button>
+  <text class="title">登录</text>
+  <form bindsubmit='onLogin' class="form">
+    <view class="input-section {{userNameFocus ? '.focus-bottom' : ''}}">
+      <input bindfocus='bindfocus' bindblur='bindblur' bindinput='bindinput' class="user" type="text" name='userName' placeholder="{{userNmaePlace}}" placeholder-class="placeholder-class" />
+    </view>
+    <view class="input-section {{passWordFocus ? '.focus-bottom' : ''}}">
+      <input bindfocus='bindfocuspass' bindblur='bindblurpass' bindinput='bindinputpass' class="pass" type="number" name='passWord' password placeholder="{{passWordPlace}}" placeholder-class="placeholder-class" />
+    </view>
+    
+    <button class="{{submitBool ? 'sub' : ''}}" formType="submit" hover-class='none'>登录</button>
   </form>
-  <text>忘记密码?</text>
+  <view class="forget" bindtap='onForget'>忘记密码?</view>
+  <d-mask mask-bool='{{maskBool}}'>
+    <view slot='inside' class='modelBox' id='modelBox' style='top:{{modelBoxTop}}px;'>
+      <view class='content'>
+        <text>请联系辉通客服</text>
+        <text selectable='true'>010-68688866</text>
+      </view>
+      <view class='confirm' bindtap='onConfirm'>确定</view>
+    </view>
+  </d-mask>
 </view>

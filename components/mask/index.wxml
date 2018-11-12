@@ -1,0 +1,3 @@
+<view hidden='{{!maskBool}}' class='container'>
+  <slot name='inside'></slot>
+</view>

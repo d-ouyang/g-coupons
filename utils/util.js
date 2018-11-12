@@ -14,6 +14,36 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+/**
+ * 获取屏幕高度
+ */
+const getWindowHeight = ()=> {
+  try {
+    const res = wx.getSystemInfoSync()
+    const windowHeight = res.windowHeight
+    return windowHeight
+  } catch (e) {
+    const windowHeight = 603
+    return windowHeight
+  }
+}
+
+const setModelTop = (id) => {
+  wx.createSelectorQuery().select('#modelBox').boundingClientRect(res => {
+    const windowHeight = getWindowHeight()
+    console.log(res.height);
+    const modelBoxTop = parseInt((windowHeight - res.height) * 3 / 7)
+    console.log(modelBoxTop);
+    wx.nextTick(() => {
+      this.setData({
+        modelBoxTop
+      })
+    })
+  }).exec()
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime,
+  getWindowHeight,
+  setModelTop
 }
