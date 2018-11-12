@@ -33,7 +33,7 @@ Page({
    * 表单提交事件
    */
   onLogin: function(e) {
-    console.log(e)
+    console.log(e.detail.value)
   },
 
   /**
