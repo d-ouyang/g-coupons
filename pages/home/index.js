@@ -15,34 +15,6 @@ Page({
 
   },
 
-  bindInvoice: function(){
-    // 已有发票
-    // wx.chooseInvoice({
-    //   success: (res) => {
-    //     console.log(res)
-    //   },
-    //   fail: (err) => {
-    //     console.log(err)
-    //   }
-    // })
-    // 选择发票抬头  新增
-    wx.chooseInvoiceTitle({
-      success: (res) => {
-        console.log(res)
-      },
-      fail: (err) => {
-        console.log(err)
-      }
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
@@ -51,31 +23,19 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * 跳转页面
    */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  bindNavigation: function (e) {
+    const color = e.currentTarget.dataset.color;
+    console.log(color)
+    if (color == 'blue') {
+      var nav = 'release'
+    } else if (color == 'yellow') {
+      var nav = 'receive'
+    }
+    wx.navigateTo({
+      url: `/pages/${nav}/index`
+    })
   },
 
   /**

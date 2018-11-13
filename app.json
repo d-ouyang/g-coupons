@@ -2,13 +2,34 @@
   "pages": [
     "pages/login/index",
     "pages/home/index",
-    "pages/personal/index"
-    
+    "pages/personal/index",
+    "pages/release/index",
+    "pages/receive/index",
+    "pages/common/coupons/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "辉通商户",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#BDC3CB",
+    "selectedColor": "#1C2E49",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "/resource/icon/home.png",
+        "selectedIconPath": "/resource/icon/selectedHome.png"
+      },
+      {
+        "pagePath": "pages/personal/index",
+        "text": "我的",
+        "iconPath": "/resource/icon/personal.png",
+        "selectedIconPath": "/resource/icon/selectedPersonal.png"
+      }
+    ]
   }
 }

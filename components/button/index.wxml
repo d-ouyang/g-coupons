@@ -1,0 +1,3 @@
+<view class='container'>
+  <button bind:tap='onClick' style='background-color:{{color}}' hover-class='none'>{{text}}</button>
+</view>

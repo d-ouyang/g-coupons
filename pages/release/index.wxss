@@ -1,0 +1,62 @@
+.header {
+  position: relative;
+  box-sizing: border-box;
+  padding: 32rpx 40rpx;
+  height: 416rpx;
+  background-color: #617FDF;
+  margin-bottom: 100rpx;
+}
+
+.header image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 138rpx;
+}
+
+.title {
+  color: #fff;
+  margin-bottom: 56rpx;
+}
+
+.title-main {
+  font-size: 48rpx;
+  font-weight: 500;
+  margin-bottom: 16rpx;
+}
+
+.title-sub {
+  font-size: 28rpx;
+  font-weight: 300;
+  opacity: 0.5; 
+}
+
+.phone-box {
+  box-sizing: border-box;
+  padding-bottom: 16rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2rpx solid rgba(255, 255, 255, 0.7);
+}
+
+.phone-box text {
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 20rpx;
+}
+
+.phone-box input {
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #fff;
+  border-left: 0.5px solid #CFD8F5;
+  padding-left: 18rpx;
+}
+
+.placeholder-class {
+  color: #7E98EB;
+}

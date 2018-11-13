@@ -1,6 +1,25 @@
-<!--pages/home/index.wxml-->
-<text bindtap='bindInvoice'>开发票</text>
-<web-view src="https://wx116s.phtonspark.com/ouyangtest.html"></web-view>
+<view class='container'>
+  <view class='title'>Hi, 上午好</view>
+  <view class='desc'>和顺大酒店(这里显示商户名全称)</view>
+  <view class='card card-blue' data-color='blue' bindtap='bindNavigation'>
+    <view class='card-box'>
+      <image src='/resource/image/card-blue.png' class='card-image'></image>
+      <view class='card-info'>
+        <view class='card-title'>发优惠券</view>
+        <view class='card-desc'>支持单个车主精准发放</view>
+      </view>
+    </view>
+    <view class='shadow-blur shadow-blue'></view>
+  </view>
 
-
-<!-- <web-view src="https://mp.weixin.qq.com/"></web-view> -->
+  <view class='card card-yellow' data-color='yellow' bindtap='bindNavigation'>
+    <view class='card-box'>
+      <image src='/resource/image/card-yellow.png' class='card-image'></image>
+      <view class='card-info'>
+        <view class='card-title'>扫码领券</view>
+        <view class='card-desc'>快速生成动态二维码</view>
+      </view>
+    </view>
+    <view class='shadow-blur shadow-yellow'></view>
+  </view>
+</view>

@@ -28,22 +28,29 @@ const getWindowHeight = ()=> {
   }
 }
 
-const setModelTop = (id) => {
+const setModelTop = (id, callback) => {
   wx.createSelectorQuery().select('#modelBox').boundingClientRect(res => {
+    
     const windowHeight = getWindowHeight()
-    console.log(res.height);
-    const modelBoxTop = parseInt((windowHeight - res.height) * 3 / 7)
-    console.log(modelBoxTop);
-    wx.nextTick(() => {
-      this.setData({
-        modelBoxTop
-      })
-    })
+    callback(res, windowHeight)
+    // console.log(res.height);
+    // const modelBoxTop = parseInt((windowHeight - res.height) * 3 / 7)
+    // console.log(modelBoxTop);
+    // wx.nextTick(() => {
+    //   this.setData({
+    //     modelBoxTop
+    //   })
+    // })
   }).exec()
+}
+
+const computedTop = (h1, h2) => {
+  return parseInt((h2 - h1) * 3 / 7)
 }
 
 module.exports = {
   formatTime,
   getWindowHeight,
-  setModelTop
+  setModelTop,
+  computedTop
 }

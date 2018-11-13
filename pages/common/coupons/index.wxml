@@ -1,0 +1,28 @@
+<view class='container'>
+  <view class='tabbar'>
+    <view bindtap='bindtab' data-type="1" data-active='{{active}}' class='tab-item left-148 {{active ? "active-color" : ""}}'>
+      定额券
+    </view>
+    <view bindtap='bindtab' data-type="2" data-active='{{active}}' class='tab-item right-148 {{active ? "" : "active-color"}}'>时长券</view>
+    <view class='active-bottom {{active ? "left-148" : "left-484"}}'></view>
+  </view>
+
+  <view class='coupons-box'>
+    <view class='coupons-list'>
+      <view class='coupon-item'>
+        <view class='coupon-item-content'>
+          <view>
+            <view></view>
+            <view></view>
+            <view></view>
+          </view>
+          <view>
+            <text></text>
+            <text></text>
+          </view>
+        </view>
+        <image></image>
+      </view>
+    </view>
+  </view>
+</view>

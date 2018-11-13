@@ -35,7 +35,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -133,18 +133,13 @@ Page({
     this.setData({
       maskBool: true
     }, () => {
-      // util.setModelTop('#modelBox')
-      wx.createSelectorQuery().select('#modelBox').boundingClientRect(res => {
-        const windowHeight = util.getWindowHeight()
-        console.log(res.height);
-        const modelBoxTop = parseInt((windowHeight - res.height)*3/7)
-        console.log(modelBoxTop);
-        wx.nextTick(() => {
-          this.setData({
-            modelBoxTop
-          })
+      util.setModelTop('#modelBox', (res,h) => {
+        const modelBoxTop = util.computedTop(res.height, h)
+        console.log(modelBoxTop)
+        this.setData({
+          modelBoxTop
         })
-      }).exec()
+      })
     })
   },
 

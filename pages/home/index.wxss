@@ -1,1 +1,101 @@
-/* pages/home/index.wxss */
+.container {
+  box-sizing: border-box;
+  padding: 40rpx 40rpx 0; 
+}
+
+.title {
+  font-size: 48rpx;
+  color: #1C2E49;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+
+.desc {
+  font-size: 27rpx;
+  color: #A4ABB6;
+  font-weight: 500;
+  margin-bottom: 50rpx;
+}
+
+.desc {
+  font-size: 27rpx;
+  color: #A4ABB6;
+  font-weight: 500;
+  margin-bottom: 50rpx;
+}
+
+.card {
+  box-sizing: border-box;
+  position: relative;
+  width: 670rpx;
+  height: 260rpx;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+}
+
+.card-blue {
+  background: linear-gradient(right,#617FDF,#89A4FB);
+  background: -moz-linear-gradient(right,#617FDF,#89A4FB);
+  background: -o-linear-gradient(right,#617FDF,#89A4FB);
+  background: -webkit-linear-gradient(left,#617FDF,#89A4FB);
+}
+
+.card-yellow {
+  background: linear-gradient(right,#FBBD14,#FED14B);
+  background: -moz-linear-gradient(r#FBBD14,#FED14B);
+  background: -o-linear-gradient(right,#FBBD14,#FED14B);
+  background: -webkit-linear-gradient(left,#FBBD14,#FED14B);
+}
+
+.card-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-image {
+  width: 300rpx;
+  height: 260rpx;
+}
+
+.card-info {
+  margin-right: 30rpx;
+}
+
+.card-title {
+  color: #fff;
+  font-size: 40rpx;
+  text-align: right;
+  margin-bottom: 18rpx;
+  font-weight: 600;
+}
+
+.card-desc {
+  font-size: 30rpx;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.shadow-blur {
+  position: absolute;
+  width: 554rpx;
+  height: 98rpx;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  bottom:40rpx; 
+  border-radius:8rpx;
+  filter:blur(60rpx);
+  opacity: 0.6;
+}
+
+.shadow-blue {
+  background-color: #5371D0;
+}
+
+.shadow-yellow {
+  background-color: #FF9F00;
+}

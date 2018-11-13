@@ -5,7 +5,7 @@ page{
   font-family: PingFangSC,'微软雅黑', Arial, Helvetica, sans-serif;
 }
 
-text {
+text, view {
   line-height: 1.0;
 }
 

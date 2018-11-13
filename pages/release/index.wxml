@@ -1,0 +1,14 @@
+<view class='container'>
+  <view class='header'>
+    <view class='title'>
+      <view class='title-main'>输入手机号</view>
+      <view class='title-sub'>请输入用户手机号以确认场库停车信息</view>
+    </view>
+    <view class='phone-box'>
+      <text>+86</text>
+      <input focus='true' bindfocus='bindfocus' bindinput='bindinput' bindblur='bindblur' maxlength='13' type='text' placeholder-class='placeholder-class' placeholder='{{placeholder}}' value='{{phone}}'/>
+    </view>
+    <image src='/resource/image/release.png'></image>
+  </view>
+  <d-button bindbuttontap="onNext"></d-button>
+</view>

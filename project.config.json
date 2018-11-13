@@ -27,13 +27,36 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "首页",
+					"pathName": "pages/home/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发券",
+					"pathName": "pages/release/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠券管理",
+					"pathName": "pages/common/coupons/index",
+					"query": ""
+				}
+			]
 		}
 	}
 }

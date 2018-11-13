@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "辉通商户助手",
   "usingComponents": {
     "d-mask": "/components/mask/index"
   }
