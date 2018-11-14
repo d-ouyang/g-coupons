@@ -1,0 +1,27 @@
+<view class='container'>
+  <view class='header'>
+    <view class='title'>请扫描二维码</view>
+    <view class='sub-title'>领取停车优惠券</view>
+  </view>
+
+  <view class='qrcode-container'>
+    <view class='qrcode-box'>
+      <view class='qrcode-image'>
+        <image></image>
+      </view>
+    </view>
+    <view class='qrcode-info'>
+      <view class='info-text'>
+        <view class='name'>优惠券名称最长字段巴拉巴拉巴拉巴拉版本</view>
+        <view class='duration'>2018.08.28 至 2018.10.31</view>
+      </view>
+      <view class='money'>
+        <text class='amount'>20</text>
+        <text class='yuan'>元</text>
+      </view>
+      <image class='before circle' src='/resource/icon/iconCircle.png'></image>
+      <image class='after circle' src='/resource/icon/iconCircle.png'></image>
+    </view>
+
+  </view>
+</view>

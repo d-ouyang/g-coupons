@@ -6,6 +6,9 @@ Page({
    */
   data: {
     active: true, // 默认定额券
+    currentType: "1", // 默认定额券
+    coupons:[],
+    noMore: false
   },
 
   /**
@@ -30,23 +33,27 @@ Page({
   },
 
   bindtab: function (e) {
-    const data = e.currentTarget.dataset;
-
-    if (data.type == '1') {
-      if (!data.active) {
+    const data = e.currentTarget.dataset
+    console.log(data)
+    let currentType = this.data.currentType
+    if (currentType == data.type) {
+      return
+    }
+    this.setData({
+      currentType: data.type
+    },() => {
+      if (data.type == '1') {
         console.log('定额券')
         this.setData({
           active: true
         })
-      }
-    } else if (data.type == '2') {
-      if (data.active) {
+      } else if (data.type == '2') {
         console.log('时长券')
         this.setData({
           active: false
         })
       }
-    }
+    })
   },
 
   /**

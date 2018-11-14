@@ -1,0 +1,95 @@
+.coupon-item {
+  box-sizing: border-box;
+  position: relative;
+  width: 670rpx;
+  height: 220rpx;
+  padding: 46rpx 40rpx 0;
+  margin-bottom: 30rpx;
+  border-radius: 4rpx;
+  background-color: #fff;
+  box-shadow:0 20rpx 30rpx 0 rgba(65,77,87,0.03);
+}
+
+.disable-color {
+  color: #E2E4E9;
+}
+
+.name-color {
+  color: #1C2E49;
+}
+
+.duration-color {
+  color: #BDC3CB;
+}
+
+.amount-color {
+  color: #1C2E49;
+}
+
+.money-color {
+  color: #617FDF;
+}
+
+.coupon-item image {
+  position: absolute;
+  width: 68rpx;
+  height: 68rpx;
+  right: 0;
+  bottom: 0;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item-info {
+  max-width: 448rpx;
+}
+
+.item-name {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.item-duration {
+  font-size: 26rpx;
+  font-weight: 400;
+  margin-bottom: 40rpx;
+}
+
+.item-amount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 26rpx;
+  font-weight: 400;
+}
+
+.amount {
+  font-family: Helvetica;
+  font-weight: bold;
+}
+
+.item-money {
+  padding-top: 4rpx;
+  display: flex;
+  align-items: baseline;
+}
+
+.item-number {
+  font-size: 90rpx;
+  font-family: Helvetica;
+  font-weight: bold;
+  margin-right: 4rpx;
+}
+
+.item-yuan {
+  font-size: 28rpx;
+  font-weight: 500;
+}

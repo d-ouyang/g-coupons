@@ -1,0 +1,17 @@
+<view class='coupon-item'>
+  <view class='item-content'>
+    <view class='item-info'>
+      <view class='item-name {{disable ? "disable-color" : "name-color"}}'>优惠券名称最长字段显示字段显示字段显示</view>
+      <view class='item-duration {{disable ? "disable-color" : "duration-color"}}'>2018.09.01 至 2018.09.30</view>
+      <view class='item-amount {{disable ? "disable-color" : "amount-color"}}'>
+        <text>剩余数量：</text>
+        <text class='amount {{disable ? "disable-color" : "money-color"}}'>1000</text>
+      </view>
+    </view>
+    <view class='item-money {{disable ? "disable-color" : "money-color"}}'>
+      <text class='item-number'>20</text>
+      <text class='item-yuan'>元</text>
+    </view>
+  </view>
+  <image wx:if='{{selected}}' class='selected-coupon' src='/resource/image/selected-coupon.png'></image>
+</view>

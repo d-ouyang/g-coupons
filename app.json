@@ -5,7 +5,8 @@
     "pages/personal/index",
     "pages/release/index",
     "pages/receive/index",
-    "pages/common/coupons/index"
+    "pages/common/coupons/index",
+    "pages/qrcode/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
