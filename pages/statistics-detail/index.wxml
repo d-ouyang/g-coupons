@@ -1,0 +1,64 @@
+<view class='container'>
+  <view class='header'></view>
+  <view class='main'>
+    <view class='main-header'>
+      <view class='main-title'>当日</view>
+      <view class='main-sub-title'>2018.09.10 至 2018.11.10</view>
+    </view>
+
+    <view class='section'>
+      <view class='section-header'>
+        <view class='section-title'>优惠券库存</view>
+        <view class='section-sum number-container'>
+          <text class='amount-big'>4,500</text>
+          <text class='zhang'>张</text>
+        </view>
+      </view>
+      <view class='section-box'>
+        <view class='coupon-box'>
+          <image src='/resource/icon/iconQuota.png'></image>
+          <text class='coupon-type'>定额券</text>
+          <view class='coupon-amount number-container'>
+            <text class='amount-small'>3,200</text>
+            <text class='zhang'>张</text>
+          </view>
+        </view>
+        <view class='coupon-box'>
+          <image src='/resource/icon/iconTiming.png'></image>
+          <text class='coupon-type'>时长券</text>
+          <view class='coupon-amount number-container'>
+            <text class='amount-small'>1,300</text>
+            <text class='zhang'>张</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='section'>
+      <view class='progress-box'>
+        <view class='section-title'>优惠券发放</view>
+        <view class='progress-container'>
+          <view class='number-container'>
+            <text class='amount-middle'>1,245</text>
+            <text class='zhang'>张</text>
+          </view>
+          <view class='percent percent-rel'>27.6%</view>
+        </view>
+
+        <progress class='progress' percent='27.6' stroke-width='15' activeColor='#617FDF'  backgroundColor='#EFF1F6' border-radius='8' active='true'></progress>
+      </view>
+
+      <view class='progress-box'>
+        <view class='section-title'>优惠券发使用</view>
+        <view class='progress-container'>
+          <view class='number-container'>
+            <text class='amount-middle'>893</text>
+            <text class='zhang'>张</text>
+          </view>
+          <view class='percent percent-use'>71.7%</view>
+        </view>
+        <progress class='progress' percent='71.7' stroke-width='15' activeColor='#1BD197' backgroundColor='#EFF1F6' border-radius='8' active='true' ></progress>
+      </view>
+    </view>
+  </view>
+</view>

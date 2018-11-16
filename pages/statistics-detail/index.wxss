@@ -1,0 +1,176 @@
+page {
+  background-color: #F5F6F7;
+}
+
+.container {
+  background-color: transparent;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  height: 292rpx;
+  left: 0;
+  top: 0;
+  background-color: #617FDF;
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  padding:0 40rpx;
+  background-color: transparent;
+}
+
+.main-header {
+  padding-top: 32rpx;
+  color: #fff;
+  margin-bottom: 50rpx;
+}
+
+.main-title {
+  font-size: 48rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+
+.main-title {
+  font-size: 48rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+
+.main-sub-title {
+  font-size: 30rpx;
+  font-family: Helvetica;
+}
+
+.section {
+  box-sizing: border-box;
+  padding: 40rpx 40rpx 0;
+  background-color: #fff;
+  border-radius: 8rpx;
+  box-shadow:0 6rpx 28rpx 2rpx rgba(65,77,87,0.1);
+  margin-bottom: 30rpx;
+}
+
+.section-header {
+  padding-bottom: 26rpx;
+  border-bottom: 0.5px solid #EEEFF1;
+}
+
+.section-title {
+  font-size: 26rpx;
+  color: #8D96A4;
+  font-weight: 400;
+  margin-bottom: 40rpx;
+}
+
+.number-container{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  color: #1C2E49;
+}
+
+.amount-big {
+  font-size: 80rpx;
+  font-family: Helvetica;
+  font-weight: bold;
+}
+
+.zhang {
+  font-size: 26rpx;
+  margin-left: 2rpx;
+}
+
+.section-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 28rpx 0;
+}
+
+.coupon-box {
+  width: 50%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.coupon-box:last-of-type{
+  border-left: 0.5px solid #EEEFF1;
+  padding-left: 34rpx;
+}
+
+
+.coupon-box image {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 6rpx;
+}
+
+.coupon-type {
+  font-size: 26rpx;
+  color: #8D96A4;
+  font-weight: 400;
+}
+
+.coupon-amount {
+  margin-left: 20rpx;
+}
+
+.amount-small {
+  font-size: 36rpx;
+  font-family: Helvetica;
+  font-weight: bold;
+}
+
+.amount-middle {
+  font-size: 48rpx;
+  font-family: Helvetica;
+  font-weight: bold;
+}
+
+.progress-box{
+  padding-bottom: 50rpx;
+}
+
+.progress-box:first-of-type{
+  border-bottom: 0.5px solid #EEEFF1;
+}
+
+.progress-box:last-of-type {
+  padding-top: 32rpx;
+}
+
+.progress-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.percent {
+  font-size: 30rpx;
+  font-family: Helvetica;
+  font-weight: bold;
+}
+
+.percent-rel {
+  color: #617FDF;
+}
+
+.percent-use {
+  color: #1BD197;
+}
+
+.progress {
+  width: 100%;
+  height: 30rpx;
+}
+
+
+

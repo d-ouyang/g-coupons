@@ -7,7 +7,8 @@
     "pages/receive/index",
     "pages/common/coupons/index",
     "pages/qrcode/index",
-    "pages/common/statistics/index"
+    "pages/common/statistics/index",
+    "pages/statistics-detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
