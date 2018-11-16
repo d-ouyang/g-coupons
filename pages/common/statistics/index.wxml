@@ -1,0 +1,18 @@
+<view class='container'>
+  <view class='title'>请选择统计时间段</view>
+  <view class='time-tag'>
+    <view bindtap='bindSelect' wx:for="{{selectArr}}" wx:key="item.title" data-index="{{index}}" class='tag {{item.selected ? "active" : ""}}' >{{item.title}}</view>
+  </view>
+
+  <view hidden='{{!pickerShow}}' class='picker-box'>
+    <view class='date-box'>
+      <picker bindchange="bindStartChange" class='date {{startPicker ? "picker-color" : ""}}' mode="date" start="2012-01-01" end="2099-01-01" value="{{start}}">{{startPicker ? start : "请选择开始日期"}}</picker>
+    </view>
+    <image src='/resource/icon/iconTo.png'></image>
+    <view class='date-box'>
+      <picker bindchange='bindEndChange' class='date {{endPicker ? "picker-color" : ""}}' mode="date" start="2012-01-01" end="2099-01-01" value="{{end}}">{{endPicker ? end : "请选择结束日期"}}</picker>
+    </view>
+  </view>
+
+  <view class='check {{canCheck ? "check-active" : ""}}' bindtap='bindCheck'>查看</view>
+</view>

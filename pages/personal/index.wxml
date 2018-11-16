@@ -1,2 +1,30 @@
-<!--pages/personal/index.wxml-->
-<text>pages/personal/index.wxml</text>
+<view class='container'>
+  <view class='header'>
+    <view class='user'>
+      <image class='user-bg' src='/resource/image/personal-bg.png'></image>
+      <view class='user-box'>
+        <open-data class='avatar' type='userAvatarUrl'></open-data>
+        <view class='info'>
+          <view class='nick-name'>用户昵称</view>
+          <view class='buss-name'>商户名字巴拉巴拉</view>
+        </view>
+      </view>
+      
+    </view>
+    <view class='coupons'>
+      <view class='coupon'>
+        <view class='amount quota-amount'>1,200</view>
+        <view class='desc'>定额券库存(张)</view>
+      </view>
+      <view class='line'></view>
+      <view class='coupon'>
+        <view class='amount long-term-amount'>673</view>
+        <view class='desc'>时长券库存(张)</view>
+      </view>
+    </view>
+  </view>
+
+  <d-function bindNavToPage='navToPage'></d-function>
+
+  <view class='exit' bindtap='bindExit'>退出登录</view>
+</view>

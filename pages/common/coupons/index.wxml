@@ -17,6 +17,4 @@
   </view>
 
    <navigator class='product' url="/pages/qrcode/index" hover-class="none">生成二维码</navigator>
-
-  <!-- <view class='product'>生成二维码</view> -->
 </view>

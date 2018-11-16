@@ -1,0 +1,44 @@
+.function {
+  border-top: 0.5px solid #EEEFF1;
+  border-bottom: 0.5px solid #EEEFF1;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  background-color: #fff; 
+}
+
+.function-item {
+  height: 104rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #EEEFF1;
+}
+
+.function-item:last-of-type{
+  border-bottom: 0;
+}
+
+.item-title {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-title image {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 20rpx;
+}
+
+.item-title text {
+  font-size: 32rpx;
+  color: #1C2E49;
+  font-weight: 500;
+}
+
+.arrow {
+  width: 18rpx;
+  height: 30rpx;
+  margin-right: 6rpx;
+}

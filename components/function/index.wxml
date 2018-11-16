@@ -1,0 +1,9 @@
+<view class='function'>
+  <view bind:tap='onTap' wx:for='{{functions}}' data-router='{{item.router}}' wx:key="item.router" class='function-item'>
+    <view class='item-title'>
+      <image src='{{item.iconPath}}'></image>
+      <text>{{item.title}}</text>
+    </view>
+    <image class='arrow' src='{{arrowPath}}'></image>
+  </view>
+</view>

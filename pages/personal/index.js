@@ -16,6 +16,16 @@ Page({
   },
 
   /**
+   * 跳转页面
+   */
+  navToPage: function(e) {
+    console.log(e)
+    wx.navigateTo({
+      url:  `/pages/common/${e.detail.router}/index`
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
@@ -30,31 +40,12 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * 退出登录
    */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  bindExit: function() {
+    wx.redirectTo({
+      url: '/pages/login/index'
+    })
   },
 
   /**
