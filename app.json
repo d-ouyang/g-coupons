@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/login/index",
     "pages/home/index",
+    "pages/login/index",
     "pages/personal/index",
     "pages/release/index",
-    "pages/receive/index",
     "pages/common/coupons/index",
     "pages/qrcode/index",
     "pages/common/statistics/index",
-    "pages/statistics-detail/index"
+    "pages/statistics-detail/index",
+    "pages/release-over/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

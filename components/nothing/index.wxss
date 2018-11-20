@@ -1,0 +1,27 @@
+.nothing {
+  position: absolute;
+  width: 348rpx;
+  height: 346rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nothing-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nothing-box image {
+  width: 348rpx;
+  height: 260rpx;
+}
+
+.nothing-box text {
+  font-size: 32rpx;
+  color: #BDC3CB;
+  font-weight: 400；
+}

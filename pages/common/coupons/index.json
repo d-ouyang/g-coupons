@@ -2,6 +2,7 @@
   "backgroundColor": "#F5F6F7",
   "navigationBarTitleText": "优惠券选择",
   "usingComponents": {
-    "d-coupon": "/components/coupon/index"
+    "d-coupon": "/components/coupon/index",
+    "d-nothing": "/components/nothing/index"
   }
 }

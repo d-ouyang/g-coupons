@@ -71,12 +71,16 @@ page {
   height: 88rpx;
   bottom: 0;
   left: 0;
-  background-color: #617FDF;
+  background-color: #E2E4E9;
   line-height: 88rpx;
   text-align: center;
   font-size: 32rpx;
   color: #fff;
   font-weight: 500;
+}
+
+.product-active {
+  background-color: #617FDF;
 }
 
 .no-more {

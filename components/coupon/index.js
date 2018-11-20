@@ -4,8 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    disable: Boolean,
-    selected: Boolean
+    item: Object
   },
 
   /**
@@ -13,6 +12,10 @@ Component({
    */
   data: {
 
+  },
+
+  attached() {
+    console.log(this.properties)
   },
 
   /**

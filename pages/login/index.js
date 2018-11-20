@@ -1,4 +1,6 @@
 const util = require('../../utils/util.js')
+import { LoginModel} from '../../models/login.js'
+const loginModel = new LoginModel()
 
 Page({
 
@@ -124,6 +126,29 @@ Page({
     if (!submitBool) return
     let requestData = e.detail.value
     console.log(requestData)
+    if (requestData.username == '') {
+      wx.showToast({
+        title: '用户名不能为空',
+        icon: 'none'
+      })
+    } else if (requestData.passWord == '') {
+      wx.showToast({
+        title: '密码不能为空',
+        icon: 'none'
+      })
+    } else {
+      loginModel.request({
+        url: '/auth/userWeb/login',
+        method: 'POST',
+        data: requestData,
+      }).then(res => {
+        wx.setStorageSync('token', res.data)
+        console.log(res)
+        wx.switchTab({
+          url: '/pages/home/index',
+        })
+      })
+    }
   },
 
   /**
@@ -133,8 +158,8 @@ Page({
     this.setData({
       maskBool: true
     }, () => {
-      util.setModelTop('#modelBox', (res,h) => {
-        const modelBoxTop = util.computedTop(res.height, h)
+      util.setModelTop('#modelBox', (res, h) => {
+        const modelBoxTop = util.computedTop(res.height, 0, h)
         console.log(modelBoxTop)
         this.setData({
           modelBoxTop
@@ -150,12 +175,5 @@ Page({
     this.setData({
       maskBool: false
     })
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

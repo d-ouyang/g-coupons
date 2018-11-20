@@ -7,7 +7,7 @@
   <view class='qrcode-container'>
     <view class='qrcode-box'>
       <view class='qrcode-image'>
-        <image></image>
+        <canvas style="width: 542rpx;height: 542rpx;" canvas-id="mycanvas"/>
       </view>
     </view>
     <view class='qrcode-info'>

@@ -5,8 +5,8 @@
       <view class='user-box'>
         <open-data class='avatar' type='userAvatarUrl'></open-data>
         <view class='info'>
-          <view class='nick-name'>用户昵称</view>
-          <view class='buss-name'>商户名字巴拉巴拉</view>
+          <view class='nick-name'>{{userInfo.nickName}}</view>
+          <view class='buss-name'>{{userInfo.userName}}</view>
         </view>
       </view>
       

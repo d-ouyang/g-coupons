@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container image {
+  width: 112rpx;
+  height: 112rpx;
+  margin-top: 180rpx;
+  margin-bottom: 32rpx;
+}
+
+.container view {
+  font-size: 56rpx;
+  color: #000;
+  font-weight: 500; 
+  line-height: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.container text {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: #BDC3CB;
+  font-weight: 400;
+  margin-bottom: 64rpx;
+}
+
+.container button {
+  width: 240rpx;
+  height: 88rpx;
+  border: 2rpx solid #617FDF;
+  background-color: #fff;
+  font-size: 36rpx;
+  color: #617FDF;
+  font-weight: 500;
+  line-height: 88rpx;
+}

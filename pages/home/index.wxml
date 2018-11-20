@@ -1,6 +1,6 @@
 <view class='container'>
   <view class='title'>Hi, 上午好</view>
-  <view class='desc'>和顺大酒店(这里显示商户名全称)</view>
+  <view class='desc'>{{userInfo.userName}}</view>
   <view class='card card-blue' data-color='blue' bindtap='bindNavigation'>
     <view class='card-box'>
       <image src='/resource/image/card-blue.png' class='card-image'></image>

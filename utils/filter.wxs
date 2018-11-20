@@ -1,0 +1,23 @@
+var coupon = function(item) {
+  item.duration = item.startTime.split(' ')[0] + ' 至 ' + item.endTime.split(' ')[0]
+  item.typeText = typeText(item.discountType)
+  item.rest = item.releaseQuantity - item.giveOutQuantity
+  item.selected = false
+  return item
+}
+
+
+var typeText = function(theType) {
+  switch (theType) {
+    case '0':
+      return '元'
+      break;
+    case '2':
+      return '小时'
+      break;
+  }
+}
+
+module.exports = {
+  coupon: coupon
+}

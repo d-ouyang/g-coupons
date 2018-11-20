@@ -1,0 +1,6 @@
+<view class='container'>
+  <image src='/resource/icon/success.png'></image>
+  <view>成功</view>
+  <text>优惠券已成功发放</text>
+  <button bindtap='bindBack'>完成</button>
+</view>

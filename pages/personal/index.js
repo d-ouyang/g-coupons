@@ -1,4 +1,8 @@
-// pages/personal/index.js
+import { PersonalModel } from '../../models/personal.js'
+const personalModel = new PersonalModel()
+
+const util = require('../../utils/util.js')
+
 Page({
 
   /**
@@ -12,7 +16,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    util.initFunction(personalModel).then(res => {
+      this.setData({
+        userInfo: res
+      })
+    })
 
+    personalModel.getTotalCouponCount({
+      url: '/discount/getRemainDiscountSum',
+      method: 'POST'
+    }).then(res => {
+      console.log(res)
+    })
   },
 
   /**

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -79,6 +79,11 @@
 					"name": "统计详情",
 					"pathName": "pages/statistics-detail/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发券成功",
+					"pathName": "pages/release-over/index"
 				}
 			]
 		}

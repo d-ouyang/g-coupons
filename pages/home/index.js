@@ -1,4 +1,8 @@
-// pages/home/index.js
+import {HomeModel} from '../../models/home.js'
+const homeModel = new HomeModel()
+
+const util = require('../../utils/util.js')
+
 Page({
 
   /**
@@ -12,7 +16,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    util.initFunction(homeModel).then(res => {
+      this.setData({
+        userInfo: res
+      })
+    })
   },
 
   /**
@@ -31,10 +39,10 @@ Page({
     if (color == 'blue') {
       var nav = 'release'
     } else if (color == 'yellow') {
-      var nav = 'receive'
+      var nav = 'qrcode'
     }
     wx.navigateTo({
-      url: `/pages/${nav}/index`
+      url: `/pages/common/coupons/index?nav=${nav}`
     })
   },
 

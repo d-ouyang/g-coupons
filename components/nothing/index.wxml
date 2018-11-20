@@ -1,0 +1,6 @@
+<view class='nothing' style='top:{{top}}'>
+  <view class='nothing-box'>
+    <image src='{{src}}'></image>
+    <text>{{text}}</text>
+  </view>
+</view>

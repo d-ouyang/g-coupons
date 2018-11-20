@@ -29,28 +29,57 @@ const getWindowHeight = ()=> {
 }
 
 const setModelTop = (id, callback) => {
-  wx.createSelectorQuery().select('#modelBox').boundingClientRect(res => {
-    
+  wx.createSelectorQuery().select(id).boundingClientRect(res => {
     const windowHeight = getWindowHeight()
     callback(res, windowHeight)
-    // console.log(res.height);
-    // const modelBoxTop = parseInt((windowHeight - res.height) * 3 / 7)
-    // console.log(modelBoxTop);
-    // wx.nextTick(() => {
-    //   this.setData({
-    //     modelBoxTop
-    //   })
-    // })
   }).exec()
 }
 
-const computedTop = (h1, h2) => {
-  return parseInt((h2 - h1) * 3 / 7)
+const computedTop = (h1, h2, h3) => {
+  return parseInt((h3 - h2 - h1) * 3 / 7)
+}
+
+const getDomSize = (id) => {
+  return new Promise((resolve, reject) => {
+    wx.createSelectorQuery().select(id).boundingClientRect(res => {
+      resolve(res)
+    }).exec()
+  })
+  // wx.createSelectorQuery().select(id).boundingClientRect(res => {
+  //   callback(res)
+  // }).exec()
+}
+
+const initFunction = (homeModel) => {
+  return new Promise((resolve, reject) => {
+    const token = wx.getStorageSync('token')
+    if (!token) {
+      wx.redirectTo({
+        url: '/pages/login/index'
+      })
+    } else {
+      const userInfo = wx.getStorageSync('userInfo')
+      console.log(!userInfo)
+      if (!userInfo) {
+        return homeModel.getUserInfo({
+          url: '/userinfo/userweb/currentUserInfo',
+          method: "POST",
+        }).then(res => {
+          wx.setStorageSync('userInfo', res)
+          resolve(res)
+        }) 
+      } else {
+        resolve(userInfo)
+      }
+    }
+  })
 }
 
 module.exports = {
   formatTime,
   getWindowHeight,
   setModelTop,
-  computedTop
+  computedTop,
+  getDomSize,
+  initFunction
 }
