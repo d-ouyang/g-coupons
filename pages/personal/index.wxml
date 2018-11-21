@@ -1,3 +1,5 @@
+<wxs src='../../utils/filter.wxs' module='filter' />
+
 <view class='container'>
   <view class='header'>
     <view class='user'>
@@ -9,16 +11,15 @@
           <view class='buss-name'>{{userInfo.userName}}</view>
         </view>
       </view>
-      
     </view>
     <view class='coupons'>
       <view class='coupon'>
-        <view class='amount quota-amount'>1,200</view>
+        <view class='amount quota-amount'>{{filter.handleNumber(disCount.normalDisCount)}}</view>
         <view class='desc'>定额券库存(张)</view>
       </view>
       <view class='line'></view>
       <view class='coupon'>
-        <view class='amount long-term-amount'>673</view>
+        <view class='amount long-term-amount'>{{filter.handleNumber(disCount.durationDisCount)}}</view>
         <view class='desc'>时长券库存(张)</view>
       </view>
     </view>

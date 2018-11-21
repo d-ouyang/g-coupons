@@ -20,27 +20,6 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
    * 用户名  聚焦
    */
   bindfocus: function(e) {
@@ -142,8 +121,7 @@ Page({
         method: 'POST',
         data: requestData,
       }).then(res => {
-        wx.setStorageSync('token', res.data)
-        console.log(res)
+        wx.setStorageSync('token', res)
         wx.switchTab({
           url: '/pages/home/index',
         })

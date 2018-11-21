@@ -1,11 +1,14 @@
 var coupon = function(item) {
+  item.rest = item.releaseQuantity - item.giveOutQuantity
   item.duration = item.startTime.split(' ')[0] + ' 至 ' + item.endTime.split(' ')[0]
   item.typeText = typeText(item.discountType)
-  item.rest = item.releaseQuantity - item.giveOutQuantity
-  item.selected = false
+  // 先判断item.selected是否过滤过
+  if (item.selected == undefined) {
+    item.selected = false
+  }
+
   return item
 }
-
 
 var typeText = function(theType) {
   switch (theType) {
@@ -18,6 +21,32 @@ var typeText = function(theType) {
   }
 }
 
+/**
+ * 处理路由
+ */
+var returnNav = function (nav) {
+  if (nav == 'release') {
+    return '发放'
+  } else if (nav == 'qrcode') {
+    return '生成二维码'
+  }
+}
+
+/**
+ * 处理超过一千的数字
+ */
+var handleNumber = function(num) {
+  if (num >= 1000) {
+    var arr = (num + '').split('')
+    arr.splice(arr.length - 3, 0, ',')
+    num = arr.join('')
+  }
+
+  return num
+}
+
 module.exports = {
-  coupon: coupon
+  coupon: coupon,
+  returnNav: returnNav,
+  handleNumber: handleNumber
 }

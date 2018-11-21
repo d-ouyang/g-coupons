@@ -16,6 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     util.initFunction(personalModel).then(res => {
       this.setData({
         userInfo: res
@@ -26,7 +27,9 @@ Page({
       url: '/discount/getRemainDiscountSum',
       method: 'POST'
     }).then(res => {
-      console.log(res)
+      this.setData({
+        disCount: res
+      })
     })
   },
 
@@ -58,9 +61,14 @@ Page({
    * 退出登录
    */
   bindExit: function() {
-    wx.redirectTo({
-      url: '/pages/login/index'
-    })
+    try {
+      wx.clearStorageSync()
+      wx.redirectTo({
+        url: '/pages/login/index'
+      })
+    } catch (e) {
+      // Do something when catch error
+    }
   },
 
   /**

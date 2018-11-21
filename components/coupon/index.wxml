@@ -1,4 +1,4 @@
-<view class='coupon-item'>
+<view data-index='{{index}}' data-item='{{item}}' class='coupon-item' bindtap='select'>
   <view class='item-content'>
     <view class='item-info'>
       <view class='item-name {{!item.isValid ? "disable-color" : "name-color"}}'>{{item.discountName}}</view>

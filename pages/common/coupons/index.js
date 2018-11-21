@@ -37,13 +37,18 @@ Page({
     canSwitch: false, //默认不能切换
     currentPage: 1,
     pageSize: 15,
-    selected: false
+    selected: false,
+    currentIndex: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    this.setData({
+      nav: options.nav
+    })
     wx.showLoading({
       title: '加载中...',
     })
@@ -94,17 +99,50 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 子组件派发事件
    */
-  onReady: function () {
+  bindSelect: function(e) {
+    let currentIndex = this.data.currentIndex
 
-  },
+    let currentSelected = this.data.selected
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+    let selectedIndex = e.detail.index
+    
+    let selected = e.detail.selected
 
+    let coupons = this.data.coupons
+    // 几种情况
+    /**
+     * 1. 当前没有被选中的情况
+     * 2. 当前有选中的情况 点的是选中的元素
+     * 3. 当前有选中的情况 点的不是选中的元素
+     */
+    console.log(selectedIndex, selected)
+
+    coupons[selectedIndex].selected = !selected
+
+    if (!currentSelected) {
+      this.setData({
+        currentIndex: selectedIndex,
+        selected: !selected,
+        coupons,
+      })
+    } else {
+      if (currentIndex == selectedIndex) {
+        this.setData({
+          currentIndex: null,
+          selected: !selected,
+          coupons,
+        })
+      } else {
+        coupons[currentIndex].selected = false
+        this.setData({
+          currentIndex: selectedIndex,
+          selected: !selected,
+          coupons,
+        })
+      }
+    }
   },
 
   bindtab: function (e) {
@@ -140,13 +178,14 @@ Page({
       coupons: [],
       currentPage: 1,
       noMore: false,
-      canSwitch: false
+      canSwitch: false,
+      selected: false,
+      currentIndex: null
     },() => {
       wx.showLoading({
         title: '加载中...',
       })
       couponsModel.getCoupons(Object.assign({}, params, this._returnQuestData(this.data))).then(res => {
-        console.log(res)
         this.handleArr(res)
       })
     })
@@ -157,25 +196,24 @@ Page({
    */
   onReachBottom: function() {
     console.log('上拉加载')
-    const totalPage = this.data.totalPage
-    const currentPage = this.data.currentPage
+    const noMore = this.data.noMore
 
-    if (currentPage >= totalPage) {
-      return
+    if (noMore) {
+      return false
     }
 
-    const requestData= {
-      giveOutType: this.data.currentType,
-      currentPage: this.data.currentPage,
-      pageSize: this.data.pageSize
-    }
-
-    couponsModel.getCoupons({
-      url: '/discount/getUserGroupDiscountList',
-      method: "POST",
-      data: requestData
-    }).then(res => {
-      console.log(res)
+    wx.showLoading({
+      title: '加载中...',
     })
+
+    this.setData({
+      canSwitch: false
+    },() => {
+      couponsModel.getCoupons(Object.assign({}, params, this._returnQuestData(this.data))).then(res => {
+        this.handleArr(res)
+      })
+    })
+
+    
   }
 })
