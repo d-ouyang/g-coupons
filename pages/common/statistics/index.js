@@ -209,11 +209,10 @@ Page({
       return
     }
 
-    const index = this.data.currentIndex
-    const requestData = this.data.requestData
-    console.log(requestData)
+    const title = this.data.selectArr[this.data.currentIndex].title
+    const requestStr = JSON.stringify(this.data.requestData)
     wx.navigateTo({
-      url: `/pages/statistics-detail/index?data=${requestData}&index=${index}`
+      url: `/pages/statistics-detail/index?data=${requestStr}&title=${title}`
     })
   }
 })

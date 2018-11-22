@@ -5,7 +5,8 @@ Component({
    */
   properties: {
     item: Object,
-    index: Number
+    index: Number,
+    readOnly: Boolean
   },
 
   /**
@@ -24,8 +25,11 @@ Component({
    */
   methods: {
     select(e) {
+      if (this.properties.readOnly) {
+        return
+      }
+
       let data = e.currentTarget.dataset
-      console.log(data)
       if (!data.item.isValid) {
         wx.showToast({
           title: '优惠券不可用，请重新选择',

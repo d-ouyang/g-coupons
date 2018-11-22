@@ -11,13 +11,13 @@
   <view class='coupons-box'>
     <view class='coupons-list'>
       <block wx:if='{{coupons.length}}' wx:for='{{coupons}}' wx:key="item.id">
-        <d-coupon bindselect='bindSelect' index='{{index}}' item='{{filter.coupon(item)}}'></d-coupon>
+        <d-coupon bindselect='bindSelect' readOnly='{{!navShow}}' index='{{index}}' item='{{filter.coupon(item)}}'></d-coupon>
       </block>
       <view wx:if='{{noMore}}' class='no-more'>没有更多了</view>
     </view> 
   </view>
 
-   <navigator wx:if='{{coupons.length}}' class='product {{selected?"product-active":""}}' url="/pages/{{nav}}/index" hover-class="none">{{filter.returnNav(nav)}}</navigator>
+  <view bindtap='navTo' wx:if='{{coupons.length && navShow}}' class='product {{selected?"product-active":""}}' url="/pages/{{nav}}/index" hover-class="none">{{filter.returnNav(nav)}}</view>
 </view>
 
 <d-nothing wx:if='{{!coupons.length}}' src="{{nothing.src}}" text="{{nothing.text}}" ></d-nothing>

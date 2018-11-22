@@ -1,3 +1,5 @@
+<wxs src='../../../utils/filter.wxs' module='filter' />
+
 <view class='container'>
   <view class='title'>请选择统计时间段</view>
   <view class='time-tag'>
@@ -6,11 +8,11 @@
 
   <view hidden='{{!pickerShow}}' class='picker-box'>
     <view class='date-box'>
-      <picker bindchange="bindStartChange" class='date {{startPicker ? "picker-color" : ""}}' mode="date" start="2012-01-01" end="{{endLimit}}" value="{{start}}">{{startPicker ? start : "请选择开始日期"}}</picker>
+      <picker bindchange="bindStartChange" class='date {{startPicker ? "picker-color" : ""}}' mode="date" start="2012-01-01" end="{{endLimit}}" value="{{start}}">{{startPicker ? filter.handleDateType(start) : "请选择开始日期"}}</picker>
     </view>
     <image src='/resource/icon/iconTo.png'></image>
     <view class='date-box'>
-      <picker bindchange='bindEndChange' class='date {{endPicker ? "picker-color" : ""}}' mode="date" start="2012-01-01" end="{{endLimit}}" value="{{end}}">{{endPicker ? end : "请选择结束日期"}}</picker>
+      <picker bindchange='bindEndChange' class='date {{endPicker ? "picker-color" : ""}}' mode="date" start="2012-01-01" end="{{endLimit}}" value="{{end}}">{{endPicker ? filter.handleDateType(end) : "请选择结束日期"}}</picker>
     </view>
   </view>
 

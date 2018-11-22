@@ -10,7 +10,7 @@ Component({
     },
     text: {
       type: String,
-      value: "下一步"
+      value: "发放"
     }
   },
 

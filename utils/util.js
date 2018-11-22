@@ -1,18 +1,6 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
+import {
+  config
+} from '../config'
 
 /**
  * 获取屏幕高度
@@ -39,16 +27,13 @@ const computedTop = (h1, h2, h3) => {
   return parseInt((h3 - h2 - h1) * 3 / 7)
 }
 
-const getDomSize = (id) => {
-  return new Promise((resolve, reject) => {
-    wx.createSelectorQuery().select(id).boundingClientRect(res => {
-      resolve(res)
-    }).exec()
-  })
-  // wx.createSelectorQuery().select(id).boundingClientRect(res => {
-  //   callback(res)
-  // }).exec()
-}
+// const getDomSize = (id) => {
+//   return new Promise((resolve, reject) => {
+//     wx.createSelectorQuery().select(id).boundingClientRect(res => {
+//       resolve(res)
+//     }).exec()
+//   })
+// }
 
 const initFunction = (homeModel) => {
   return new Promise((resolve, reject) => {
@@ -75,11 +60,14 @@ const initFunction = (homeModel) => {
   })
 }
 
+const returnQrcodeStr = (str) => {
+  return config.html5_url + str
+}
+
 module.exports = {
-  formatTime,
   getWindowHeight,
   setModelTop,
   computedTop,
-  getDomSize,
-  initFunction
+  initFunction,
+  returnQrcodeStr
 }

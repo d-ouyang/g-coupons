@@ -26,7 +26,7 @@ var typeText = function(theType) {
  */
 var returnNav = function (nav) {
   if (nav == 'release') {
-    return '发放'
+    return '下一步'
   } else if (nav == 'qrcode') {
     return '生成二维码'
   }
@@ -45,8 +45,30 @@ var handleNumber = function(num) {
   return num
 }
 
+/**
+ * 把 
+ * yyyy-mm-dd
+ * 改成
+ * yyyy.mm.dd
+ */
+var handleDateType = function(date) {
+  console.log(date)
+  if ("String" === date.constructor) {
+    var reg = getRegExp("-", 'g');
+    console.log(date.replace(reg, '.'))
+    return date.replace(reg, '.')
+  }
+}
+
+var calculatePercent = function(num, total) {
+  var str = num / total
+  return str.toFixed(3)*100
+}
+
 module.exports = {
   coupon: coupon,
   returnNav: returnNav,
-  handleNumber: handleNumber
+  handleNumber: handleNumber,
+  handleDateType: handleDateType,
+  calculatePercent: calculatePercent
 }

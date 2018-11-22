@@ -1,18 +1,54 @@
-// pages/statistics-detail/index.js
+import { StatisticsModel} from '../../models/statistics.js'
+
+const statisticsModel = new StatisticsModel()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    requestData: {
+      startDate: '',
+      endDate: ''
+    },
+    statistics: {
+      durationDisCount: 0,
+      giveOutDisCount: 0,
+      normalDisCount: 0,
+      totalDisCount: 0,
+      usedDisCount: 0
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.initFn(options)
+  },
 
+  initFn: function (options) {
+    console.log(options)
+    const token = wx.getStorageSync('token')
+    const requestData = JSON.parse(options.data)
+    console.log(requestData)
+    this.setData({
+      title: options.title,
+      requestData: requestData
+    }, () => {
+      statisticsModel.getStatisticsDetail({
+        url: '/discount/countDiscountSituation',
+        method: 'POST',
+        data: requestData
+      }).then(res => {
+        console.log(res)
+        this.setData({
+          statistics: res
+        })
+      })
+    })
+    
   },
 
   /**

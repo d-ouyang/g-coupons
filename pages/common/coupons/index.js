@@ -38,17 +38,25 @@ Page({
     currentPage: 1,
     pageSize: 15,
     selected: false,
-    currentIndex: null
+    currentIndex: null,
+    navShow: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    this.setData({
-      nav: options.nav
-    })
+    console.log(!options.nav)
+    if (options.nav) {
+      this.setData({
+        navShow: true,
+        nav: options.nav
+      })
+    } else {
+      this.setData({
+        navShow: false
+      })
+    }
     wx.showLoading({
       title: '加载中...',
     })
@@ -213,7 +221,21 @@ Page({
         this.handleArr(res)
       })
     })
+  },
 
-    
+  /**
+   * 带着优惠券id跳转
+   */
+  navTo: function(e) {
+    const selected = this.data.selected
+    if (!selected) {
+      return
+    }
+    const nav = this.data.nav
+    const id = this.data.coupons[this.data.currentIndex].id
+    console.log(nav,id)
+    wx.navigateTo({
+      url: `/pages/${nav}/index?id=${id}`,
+    })
   }
 })

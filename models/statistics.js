@@ -25,7 +25,7 @@ class StatisticsModel extends HTTP{
   _returnMonth() {
     const date = `${this.getYear()}-${this.getMonth()}-${this.getDate()}`
     return {
-      startDate: `${this.getYear()}-${this.getMonth()}-01}`,
+      startDate: `${this.getYear()}-${this.getMonth()}-01`,
       endDate: date
     }
   }
@@ -33,7 +33,7 @@ class StatisticsModel extends HTTP{
   _returnYear() {
     const date = `${this.getYear()}-${this.getMonth()}-${this.getDate()}`
     return {
-      startDate: `${this.getYear()}-01-01}`,
+      startDate: `${this.getYear()}-01-01`,
       endDate: date
     }
   }
@@ -50,6 +50,11 @@ class StatisticsModel extends HTTP{
         return this._returnYear()
         break;
     }
+  }
+
+  getStatisticsDetail(params) {
+    params.token = this.getToken()
+    return this.request(params)
   }
 }
 
