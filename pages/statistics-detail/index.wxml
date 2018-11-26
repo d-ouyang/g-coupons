@@ -4,7 +4,7 @@
   <view class='header'></view>
   <view class='main'>
     <view class='main-header'>
-      <view class='main-title'>当日</view>
+      <view class='main-title'>{{title}}</view>
       <view class='main-sub-title'>{{filter.handleDateType(requestData.startDate) + ' 至 ' + filter.handleDateType(requestData.endDate)}}</view>
     </view>
 
@@ -51,7 +51,7 @@
       </view>
 
       <view class='progress-box'>
-        <view class='section-title'>优惠券发使用</view>
+        <view class='section-title'>优惠券使用</view>
         <view class='progress-container'>
           <view class='number-container'>
             <text class='amount-middle'>{{filter.handleNumber(statistics.usedDisCount)}}</text>

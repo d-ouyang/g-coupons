@@ -1,0 +1,12 @@
+<view class='qrcode-info'>
+  <view class='info-text'>
+    <view class='name'>{{item.discountName}}</view>
+    <view class='duration'>{{item.duration}}</view>
+  </view>
+  <view class='money'>
+    <text class='amount'>{{item.amount}}</text>
+    <text class='yuan'>{{item.typeText}}</text>
+  </view>
+  <image class='before circle' src='/resource/icon/iconCircle.png'></image>
+  <image class='after circle' src='/resource/icon/iconCircle.png'></image>
+</view>

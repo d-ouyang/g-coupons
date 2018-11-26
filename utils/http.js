@@ -106,14 +106,17 @@ class HTTP {
               resolve(res.data.data)
             } else {
               this._showError(errCode)
+              reject
             }
           } else {
             let errCode = res.data.code
             this._showError(errCode)
+            reject
           }
         },
         fail: (err) => {
           this._showError()
+          reject
         }
       }
 

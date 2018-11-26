@@ -1,3 +1,5 @@
+<wxs src='../../utils/filter.wxs' module='filter' />
+
 <view class='container'>
   <view class='header'>
     <view class='title'>请扫描二维码</view>
@@ -10,18 +12,9 @@
         <canvas style="width: 542rpx;height: 542rpx;" canvas-id="mycanvas"/>
       </view>
     </view>
-    <view class='qrcode-info'>
-      <view class='info-text'>
-        <view class='name'>优惠券名称最长字段巴拉巴拉巴拉巴拉版本</view>
-        <view class='duration'>2018.08.28 至 2018.10.31</view>
-      </view>
-      <view class='money'>
-        <text class='amount'>20</text>
-        <text class='yuan'>元</text>
-      </view>
-      <image class='before circle' src='/resource/icon/iconCircle.png'></image>
-      <image class='after circle' src='/resource/icon/iconCircle.png'></image>
-    </view>
+    <block wx:if='{{qrShow}}'>
+      <d-qrcode item='{{filter.coupon(item)}}'></d-qrcode>
+    </block>
 
   </view>
 </view>

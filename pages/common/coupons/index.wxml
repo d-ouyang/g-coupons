@@ -2,7 +2,7 @@
 
 <view class='container'>
   <view class='tabbar'>
-    <view wx:for='{{tabs}}' wx:key='item.giveOutType' data-item='{{item}}' bindtap='bindtab' class='tab-item {{item.giveOutType == "0" ? "left-148" : "right-148"}} {{item.active ? "active-color" : ""}}'>
+    <view wx:for='{{tabs}}' wx:key='item.discountType' data-item='{{item}}' bindtap='bindtab' class='tab-item {{item.discountType == "0" ? "left-148" : "right-148"}} {{item.active ? "active-color" : ""}}'>
       {{item.value}}
     </view>
     <view class='active-bottom {{currentType == "0" ? "left-148" : "left-484"}}'></view>

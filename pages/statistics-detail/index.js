@@ -42,7 +42,6 @@ Page({
         method: 'POST',
         data: requestData
       }).then(res => {
-        console.log(res)
         this.setData({
           statistics: res
         })

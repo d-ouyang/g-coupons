@@ -4,6 +4,6 @@
   "navigationBarTitleText": "",
   "navigationBarBackgroundColor": "#617FDF",
   "usingComponents": {
-    
+    "d-qrcode": "/components/qrcode/index"
   }
 }

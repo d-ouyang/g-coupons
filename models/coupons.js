@@ -8,7 +8,7 @@ class CouponsModel extends HTTP {
 
   returnGroupid() {
     const userInfo = wx.getStorageSync('userInfo')
-    return userInfo.id
+    return userInfo.groupId
   }
 
   getRandomNum(requestData) {

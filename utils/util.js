@@ -27,14 +27,6 @@ const computedTop = (h1, h2, h3) => {
   return parseInt((h3 - h2 - h1) * 3 / 7)
 }
 
-// const getDomSize = (id) => {
-//   return new Promise((resolve, reject) => {
-//     wx.createSelectorQuery().select(id).boundingClientRect(res => {
-//       resolve(res)
-//     }).exec()
-//   })
-// }
-
 const initFunction = (homeModel) => {
   return new Promise((resolve, reject) => {
     const token = wx.getStorageSync('token')
@@ -60,8 +52,18 @@ const initFunction = (homeModel) => {
   })
 }
 
-const returnQrcodeStr = (str) => {
-  return config.html5_url + str
+const returnTimestamp = () => {
+  return new Date().getTime()
+}
+
+const returnQrcodeStr = (params) => {
+  let str = ''
+  for (let key in params) {
+    str += ('&' + key + '=' + params[key] + '')
+  }
+
+  str = config.html5_url + str.replace(/^&/, '?')
+  return str
 }
 
 module.exports = {
@@ -69,5 +71,6 @@ module.exports = {
   setModelTop,
   computedTop,
   initFunction,
+  returnTimestamp,
   returnQrcodeStr
 }

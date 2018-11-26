@@ -1,0 +1,61 @@
+.qrcode-info {
+  position: relative;
+  box-sizing: border-box;
+  width: 670rpx;
+  height: 178rpx;
+  border-top: 2rpx dashed #617FDF;
+  border-radius: 4rpx;
+  background-color: #EFF2FB;
+  padding: 48rpx 66rpx 0;
+  display: flex;
+  justify-content: space-between;
+  color: #617FDF;
+}
+
+.circle {
+  position: absolute;
+  width: 52rpx;
+  height: 52rpx;
+  top: -26rpx;
+}
+
+.before {
+  left: -26rpx;
+  transform: rotateZ(180deg);
+}
+
+.after {
+  right: -26rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+  max-width: 384rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.duration {
+  font-size: 26rpx;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.money {
+  display: flex;
+  align-items: baseline;
+}
+
+.amount {
+  font-family: Helvetica;
+  font-size: 94rpx;
+  font-weight: bold;
+}
+
+.yuan {
+  font-size: 28rpx;
+  font-weight: 500;
+}

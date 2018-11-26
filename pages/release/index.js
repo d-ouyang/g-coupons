@@ -99,15 +99,20 @@ Page({
       })
     } else if (checkBool) {
       couponsModel.releaseCoupon({
-        disGroupReleaseId: this.data.id,
-        phoneNum: phone,
+        dId: this.data.id,
+        userPhone: phone,
         relCount: 1
       }).then(res => {
-        console.log(res)
+        if (res.status == 1) {
+          wx.navigateTo({
+            url: '/pages/release-over/index',
+          })
+        } else {
+          wx.showToast({
+            title: res.message,
+          })
+        }
       })
-      // wx.navigateTo({
-      //   url: '/pages/common/coupons/index',
-      // })
     }
   }
 })

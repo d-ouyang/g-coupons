@@ -1,18 +1,6 @@
 const util = require('../../../utils/util.js')
 import { CouponsModel} from '../../../models/coupons.js'
 const couponsModel = new CouponsModel()
-const tabs = [
-  {
-    giveOutType: '0',
-    value: '定额券',
-    active: true
-  },
-  {
-    giveOutType: '2',
-    value: '时长券',
-    active: false
-  }
-]
 
 const nothing = {
   src:  '/resource/image/no-coupons.png',
@@ -30,7 +18,7 @@ Page({
    */
   data: {
     nothing,
-    tabs: tabs,
+    tabs: [],
     currentType: "0", // 默认定额券
     coupons:[],
     noMore: false,
@@ -47,24 +35,46 @@ Page({
    */
   onLoad: function (options) {
     console.log(!options.nav)
+    this.initFn(options)
+  },
+
+  /**
+   * 初始化
+   */
+  initFn: function (options) {
+    let tabs = [
+      {
+        discountType: '0',
+        value: '定额券',
+        active: true
+      },
+      {
+        discountType: '2',
+        value: '时长券',
+        active: false
+      }
+    ]
+
     if (options.nav) {
       this.setData({
         navShow: true,
-        nav: options.nav
+        nav: options.nav,
+        tabs
       })
     } else {
       this.setData({
-        navShow: false
+        navShow: false,
+        tabs
       })
     }
+
     wx.showLoading({
       title: '加载中...',
     })
-    
+
     couponsModel.getCoupons(Object.assign({}, params, this._returnQuestData(this.data))).then(res => {
       this.handleArr(res)
     })
-
   },
 
   /**
@@ -73,7 +83,7 @@ Page({
   _returnQuestData: function (data) {
     return {
       data: {
-        giveOutType: data.currentType,
+        discountType: data.currentType,
         currentPage: data.currentPage,
         pageSize: data.pageSize
       }
@@ -168,14 +178,16 @@ Page({
       return false
     }
 
-    const currentType = item.giveOutType
+    const currentType = item.discountType
+
+    let tabs = this.data.tabs
 
     for (let i in tabs) {
       if (tabs[i].active) {
         tabs[i].active = false
       }
 
-      if (tabs[i].giveOutType == currentType) {
+      if (tabs[i].discountType == currentType) {
         tabs[i].active = true
       }
     }
@@ -232,10 +244,20 @@ Page({
       return
     }
     const nav = this.data.nav
-    const id = this.data.coupons[this.data.currentIndex].id
-    console.log(nav,id)
-    wx.navigateTo({
-      url: `/pages/${nav}/index?id=${id}`,
-    })
+    console.log(nav)
+    if (nav == 'release') {
+      var id = this.data.coupons[this.data.currentIndex].discountId
+      var discountId = id
+      wx.navigateTo({
+        url: `/pages/${nav}/index?id=${id}&discountId=${discountId}`,
+      })
+    } else if (nav == 'qrcode') {
+      var id = this.data.coupons[this.data.currentIndex].id
+      var discountId = this.data.coupons[this.data.currentIndex].discountId
+      var itemStr = JSON.stringify(this.data.coupons[this.data.currentIndex])
+      wx.navigateTo({
+        url: `/pages/${nav}/index?id=${id}&discountId=${discountId}&item=${itemStr}`,
+      })
+    }
   }
 })

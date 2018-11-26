@@ -9,7 +9,7 @@
       </view>
     </view>
     <view class='item-money {{!item.isValid  ? "disable-color" : "money-color"}}'>
-      <text class='item-number'>{{item.cashDiscount}}</text>
+      <text class='item-number'>{{item.amount}}</text>
       <text class='item-yuan'>{{item.typeText}}</text>
     </view>
   </view>

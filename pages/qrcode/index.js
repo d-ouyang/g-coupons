@@ -1,5 +1,7 @@
 const QR = require('../../utils/qrcode.js')
 const util = require('../../utils/util.js')
+import { CouponsModel } from '../../models/coupons.js'
+const couponsModel = new CouponsModel()
 
 Page({
 
@@ -7,16 +9,70 @@ Page({
    * 页面的初始数据
    */
   data: {
-    src: 'https://www.baidu.com'//默认二维码生成文本
+    src: '',
+    prevRandomNum: '',
+    timer: null,
+    qrShow: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var size = this.setCanvasSize();//动态设置画布大小
-    var initUrl = this.data.src;
-    this.createQrCode(initUrl, "mycanvas", size.w, size.h);
+    console.log(options)
+    this.initFn(options)
+  },
+
+  initFn: function (options){
+    let size = this.setCanvasSize();//动态设置画布大小
+    let item = JSON.parse(options.item)
+    this.setData({
+      id: options.id,
+      discountId: options.discountId,
+      item: item,
+      size: size
+    },() => {
+      this.setData({
+        qrShow: true
+      })
+      this.getRandomNum()
+    })
+  },
+
+  /**
+   * 每次生成二维码之前都要走一遍随机字符串
+   */
+  getRandomNum: function() {
+    couponsModel.getRandomNum({
+      disGroupReleaseId: this.data.id,
+      prevRandomNum: this.data.prevRandomNum
+    }).then(res => {
+      console.log(res)
+      this.setData({
+        prevRandomNum: res.qrRandom
+      },() => {
+        let url = util.returnQrcodeStr({
+          groupId: couponsModel.returnGroupid(),
+          disGroupReleaseId: this.data.id,
+          discountId: this.data.discountId,
+          qrRandomNum: this.data.prevRandomNum,
+          timestamp: util.returnTimestamp()
+        })
+        console.log(url)
+        this.createQrCode(url, "mycanvas", this.data.size.w, this.data.size.h)
+        this.setInterval()
+      })
+    })
+  },
+
+  setInterval: function() {
+    clearInterval(this.data.timer)
+    let timer = setInterval(() => {
+      this.getRandomNum()
+    }, 100000)
+    this.setData({
+      timer: timer
+    })
   },
 
   //适配不同屏幕大小的canvas
@@ -60,5 +116,9 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  onHide: function() {
+    clearInterval(this.data.timer)
   }
 })
