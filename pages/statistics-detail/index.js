@@ -30,12 +30,15 @@ Page({
 
   initFn: function (options) {
     console.log(options)
+    const date = `${statisticsModel.getYear()}-${statisticsModel.getMonth()}-${statisticsModel.getDate()}`
     const token = wx.getStorageSync('token')
     const requestData = JSON.parse(options.data)
     console.log(requestData)
     this.setData({
       title: options.title,
-      requestData: requestData
+      requestData: requestData,
+      index: options.index,
+      date: date
     }, () => {
       statisticsModel.getStatisticsDetail({
         url: '/discount/countDiscountSituation',

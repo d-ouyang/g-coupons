@@ -5,7 +5,8 @@
   <view class='main'>
     <view class='main-header'>
       <view class='main-title'>{{title}}</view>
-      <view class='main-sub-title'>{{filter.handleDateType(requestData.startDate) + ' 至 ' + filter.handleDateType(requestData.endDate)}}</view>
+      <view wx:if='{{index == 0}}' class='main-sub-title'>{{date}}</view>
+      <view wx:else class='main-sub-title'>{{filter.handleDateType(requestData.startDate) + ' 至 ' + filter.handleDateType(requestData.endDate)}}</view>
     </view>
 
     <view class='section'>

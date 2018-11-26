@@ -46,7 +46,11 @@ Page({
    * 初始化时查询当天
    */
   initFunction: function () {
-    const requestData = statisticsModel.retrunParams(0)
+    console.log(this.data.currentIndex)
+    const requestData = {
+      startDate: '',
+      endDate: ''
+    }
     this.setData({
       requestData,
       endLimit: requestData.endDate
@@ -112,12 +116,23 @@ Page({
           requestData
         })
       }
+    } else if (index == 0){
+      const requestData = {
+        startDate: '',
+        endDate: ''
+      }
+      console.log(requestData)
+      this.setData({
+        pickerShow: false,
+        canCheck: true,
+        requestData
+      })
     } else {
       const requestData = statisticsModel.retrunParams(index)
       console.log(requestData)
       this.setData({
         pickerShow: false,
-        canCheck:true,
+        canCheck: true,
         requestData
       })
     }
@@ -210,9 +225,18 @@ Page({
     }
 
     const title = this.data.selectArr[this.data.currentIndex].title
-    const requestStr = JSON.stringify(this.data.requestData)
+    const index = this.data.currentIndex
+    if (index == 3) {
+      var requestStr = JSON.stringify({
+        startDate: this.data.start,
+        endDate: this.data.end
+      })
+    } else {
+      var requestStr = JSON.stringify(this.data.requestData)
+    }
+    console.log(index)
     wx.navigateTo({
-      url: `/pages/statistics-detail/index?data=${requestStr}&title=${title}`
+      url: `/pages/statistics-detail/index?data=${requestStr}&title=${title}&index=${index}`
     })
   }
 })
