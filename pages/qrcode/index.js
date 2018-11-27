@@ -49,7 +49,7 @@ Page({
     }).then(res => {
       console.log(res)
       this.setData({
-        prevRandomNum: res.qrRandom
+        prevRandomNum: res.qrCodeNum
       },() => {
         let url = util.returnQrcodeStr({
           groupId: couponsModel.returnGroupid(),
@@ -69,7 +69,7 @@ Page({
     clearInterval(this.data.timer)
     let timer = setInterval(() => {
       this.getRandomNum()
-    }, 100000)
+    }, 10000)
     this.setData({
       timer: timer
     })
