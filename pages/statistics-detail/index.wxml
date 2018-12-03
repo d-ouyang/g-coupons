@@ -11,7 +11,7 @@
 
     <view class='section'>
       <view class='section-header'>
-        <view class='section-title'>优惠券库存</view>
+        <view class='section-title'>优惠券总数</view>
         <view class='section-sum number-container'>
           <text class='amount-big'>{{filter.handleNumber(statistics.totalDisCount)}}</text>
           <text class='zhang'>张</text>
@@ -58,7 +58,7 @@
             <text class='amount-middle'>{{filter.handleNumber(statistics.usedDisCount)}}</text>
             <text class='zhang'>张</text>
           </view>
-          <view class='percent percent-use'>{{filter.calculatePercent(statistics.usedDisCount,statistics.totalDisCount)}}%</view>
+          <view class='percent percent-use'>{{filter.calculatePercentUsed(statistics.usedDisCount,statistics.giveOutDisCount,statistics.totalDisCount)}}%</view>
         </view>
         <progress class='progress' percent='{{filter.calculatePercent(statistics.usedDisCount,statistics.totalDisCount)}}' stroke-width='15' activeColor='#1BD197' backgroundColor='#EFF1F6' border-radius='8' active='true' ></progress>
       </view>

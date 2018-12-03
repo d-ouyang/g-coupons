@@ -75,7 +75,16 @@ var calculatePercent = function(num, total) {
   if (!total) {
     return 0
   } else {
-    var str = (parseFloat(num / total)*100).toFixed(1)
+    var str = (parseFloat(num / (total + num))*100).toFixed(1)
+    return str
+  }
+}
+
+var calculatePercentUsed = function (num1,num2,total) {
+  if (!total) {
+    return 0
+  } else {
+    var str = (parseFloat(num1 / (total + num1 + num2)) * 100).toFixed(1)
     return str
   }
 }
@@ -85,5 +94,6 @@ module.exports = {
   returnNav: returnNav,
   handleNumber: handleNumber,
   handleDateType: handleDateType,
-  calculatePercent: calculatePercent
+  calculatePercent: calculatePercent,
+  calculatePercentUsed: calculatePercentUsed
 }

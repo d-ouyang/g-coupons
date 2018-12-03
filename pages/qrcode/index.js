@@ -118,7 +118,13 @@ Page({
 
   },
 
+  onUnload: function() {
+    console.log(this.data.timer)
+    clearInterval(this.data.timer)
+  },
+
   onHide: function() {
+    console.log(this.data.timer)
     clearInterval(this.data.timer)
   }
 })

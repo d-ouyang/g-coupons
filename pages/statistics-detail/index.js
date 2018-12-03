@@ -32,7 +32,8 @@ Page({
     console.log(options)
     const date = `${statisticsModel.getYear()}-${statisticsModel.getMonth()}-${statisticsModel.getDate()}`
     const token = wx.getStorageSync('token')
-    const requestData = JSON.parse(options.data)
+    let requestData = JSON.parse(options.data)
+    
     console.log(requestData)
     this.setData({
       title: options.title,
@@ -40,6 +41,12 @@ Page({
       index: options.index,
       date: date
     }, () => {
+      // if (requestData.startDate == requestData.endDate) {
+      //   requestData = {
+      //     startDate: '',
+      //     endDate: ''
+      //   }
+      // }
       statisticsModel.getStatisticsDetail({
         url: '/discount/countDiscountSituation',
         method: 'POST',
