@@ -16,7 +16,8 @@ Page({
     passWordFocus: false,
     submitBool: false,
     forgetBool: false,
-    maskBool: false
+    maskBool: false,
+    concatPhone: '010-68688866'  
   },
 
   /**

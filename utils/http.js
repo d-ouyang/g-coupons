@@ -111,7 +111,7 @@ class HTTP {
           } else {
             let errCode = res.data.code
             this._showError(errCode)
-            reject
+            reject(errCode)
           }
         },
         fail: (err) => {
@@ -140,6 +140,12 @@ class HTTP {
       icon: 'none',
       duration: 2000
     })
+
+    if (errCode == 200 || errCode == 201) {
+      wx.redirectTo({
+        url: '/pages/login/index',
+      })
+    }
   }
 
   getToken() {

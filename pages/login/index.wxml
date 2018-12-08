@@ -15,7 +15,7 @@
     <view slot='inside' class='modelBox' id='modelBox' style='top:{{modelBoxTop}}px;'>
       <view class='content'>
         <text>请联系辉通客服</text>
-        <text selectable='true'>010-68688866</text>
+        <text>{{concatPhone}}</text>
       </view>
       <view class='confirm' bindtap='onConfirm'>确定</view>
     </view>
